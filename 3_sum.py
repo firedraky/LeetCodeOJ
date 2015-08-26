@@ -8,6 +8,10 @@ The solution set must not contain duplicate triplets.
     A solution set is:
     (-1, 0, 1)
     (-1, -1, 2)
+    
+T(n)=O(n^2)
+S(n)=O(1)
+
 #-*-encoding:utf-8-*-
 class Solution(object):
     def threeSum(self, nums):
