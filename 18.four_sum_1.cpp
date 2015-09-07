@@ -28,3 +28,33 @@ vector<vector<int>> fourSum(vector<int>&num,int target){
     result.erase(unique(result.begin(),result.end()),result.end());
     return result;
 }
+/*
+vector<vector<int>> fourSum(vector<int>&num,int target){
+    vector<vector<int>> result;
+    if(num.size()<4)return result;
+
+    sort(num.begin(),num.end());
+    unordered_map<int,vector<pair<int,int>>>cache;
+    for (int i = 0; i <num.size()-1; ++i) {
+        for (int j = i+1; j <num.size() ; ++j) {
+            cache[num[i]+num[j]].push_back(make_pair(i,j));
+        }
+    }
+    for (int i = 0; i <num.size()-1; ++i) {
+        for (int j = i+1; j <num.size() ; ++j) {
+            const int key=target-num[i]-num[j];
+            if(cache.find(key)==cache.end())
+                continue;
+            const auto& vec=cache[key];
+            for(int k=0;k<vec.size();++k){
+                if(i<=vec[k].second)
+                    continue;
+                result.push_back({num[vec[k].first],num[vec[k].second],num[i],num[j]});
+            }
+        }
+    }
+    sort(result.begin(),result.end());
+    result.erase(unique(result.begin(),result.end()),result.end());
+    return result;
+}
+*/
